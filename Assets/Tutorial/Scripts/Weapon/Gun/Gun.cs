@@ -16,6 +16,11 @@ public class Gun : MonoBehaviour
         magazine = GetComponent<Magazine>();
     }
 
+    private void OnDisable()
+    {
+        magazine.Realeasemagazine();
+    }
+
     public void Grab(SelectEnterEventArgs args)
     {
         var interactor = args.interactorObject;
